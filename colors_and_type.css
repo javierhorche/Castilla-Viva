@@ -1,0 +1,286 @@
+/* ─────────────────────────────────────────────────────────────
+   Castilla Viva — design tokens
+   Sourced from uploads/Manual Castilla Viva.html
+   ──────────────────────────────────────────────────────────── */
+
+/* Fraunces + JetBrains Mono + Inter Tight — Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ── Tinta y papel (marca madre) ───────────────────────── */
+  --cv-ink:        #14110e;   /* tinta · texto, fondos invertidos */
+  --cv-ink-2:      #2a2520;   /* tinta secundaria · cuerpo de texto */
+  --cv-paper:      #f0e9dc;   /* papel envejecido · fondo principal */
+  --cv-paper-2:    #e6dec9;   /* papel medio · zonas de descanso */
+  --cv-paper-3:    #d8cfb6;   /* papel oscuro · acentos sutiles */
+
+  /* ── Reglas, mutes ─────────────────────────────────────── */
+  --cv-rule:       rgba(20,17,14,.16);
+  --cv-rule-2:     rgba(20,17,14,.08);
+  --cv-mute:       rgba(20,17,14,.55);
+  --cv-mute-2:     rgba(20,17,14,.32);
+  --cv-rule-inv:   rgba(240,233,220,.18);
+  --cv-mute-inv:   rgba(240,233,220,.55);
+
+  /* ── Acentos marca madre — RESERVADOS ──────────────────── */
+  --cv-carmesi:    #8a1e2c;   /* solo en el punto sobre claro */
+  --cv-carmesi-2:  #6b1220;
+  --cv-oro:        #c9962f;   /* solo sobre oscuro / invertido */
+  --cv-oro-2:      #a07820;
+  --cv-oro-light:  #d9a849;
+
+  /* ── Submarcas regionales ──────────────────────────────── */
+  --cv-merindades:    #2f5d3a;  /* I · verde monte — norte del Duero */
+  --cv-merindades-2:  #1f3f28;
+  --cv-comunidades:   #5b3f7a;  /* II · morado comunero — Villalar */
+  --cv-comunidades-2: #432d5c;
+  --cv-ordenes:       #2e5a7e;  /* III · añil manchego — sur peninsular */
+  --cv-ordenes-2:     #1f3f5a;
+
+  /* ── Familias tipográficas ─────────────────────────────── */
+  --cv-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --cv-sans:  'Inter Tight', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --cv-serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+
+  /* ── Escalas semánticas (jerarquía editorial) ──────────── */
+  /* Display · Fraunces itálica SOFT 100 — solo titulares heroicos */
+  --cv-display-size:    clamp(56px, 7vw, 96px);
+  --cv-display-lh:      .95;
+  --cv-display-tracking: -0.025em;
+
+  /* H1 · Fraunces 400 — entradas de sección */
+  --cv-h1-size:         40px;
+  --cv-h1-lh:           1.05;
+  --cv-h1-tracking:     -0.02em;
+
+  /* H2 · Fraunces 400 */
+  --cv-h2-size:         28px;
+  --cv-h2-lh:           1.15;
+  --cv-h2-tracking:     -0.015em;
+
+  /* H3 · Fraunces 400 */
+  --cv-h3-size:         22px;
+  --cv-h3-lh:           1.2;
+  --cv-h3-tracking:     -0.01em;
+
+  /* Eyebrow · JetBrains Mono uppercase — etiquetas / archivo */
+  --cv-eyebrow-size:    11px;
+  --cv-eyebrow-tracking: .26em;
+
+  /* Eyebrow micro — pies, datos, números */
+  --cv-meta-size:       10px;
+  --cv-meta-tracking:   .14em;
+
+  /* Body · Inter Tight — voz cotidiana */
+  --cv-body-size:       16px;
+  --cv-body-lh:         1.55;
+
+  /* Body S · texto secundario */
+  --cv-body-s-size:     13.5px;
+  --cv-body-s-lh:       1.6;
+
+  /* Code / numeric */
+  --cv-code-size:       12px;
+
+  /* ── Espaciado base (anclaje compositivo) ──────────────── */
+  --cv-space-1:  4px;
+  --cv-space-2:  8px;
+  --cv-space-3:  12px;
+  --cv-space-4:  16px;
+  --cv-space-5:  24px;
+  --cv-space-6:  32px;
+  --cv-space-7:  48px;
+  --cv-space-8:  64px;
+  --cv-space-9:  96px;
+  --cv-space-10: 128px;
+
+  /* ── Radios (mínimos — el sistema es plano y editorial) ── */
+  --cv-radius-0:    0;       /* tarjetas, contenedores, cuadrículas */
+  --cv-radius-xs:   2px;     /* swatches, chips */
+  --cv-radius-sm:   4px;     /* tags */
+  --cv-radius-md:   12px;    /* avatares cuadrados */
+  --cv-radius-pill: 999px;   /* avatares circulares */
+
+  /* ── Bordes ────────────────────────────────────────────── */
+  --cv-border-thin:  1px solid var(--cv-rule);
+  --cv-border-ink:   1px solid var(--cv-ink);
+
+  /* ── Aire mínimo perimetral del logo (en x-heights) ────── */
+  --cv-logo-aire:    1x;     /* distancia mínima a cualquier borde */
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Defaults y reset suave
+   ──────────────────────────────────────────────────────────── */
+
+html, body {
+  background: var(--cv-paper);
+  color: var(--cv-ink);
+  font-family: var(--cv-sans);
+  font-weight: 400;
+  font-size: var(--cv-body-size);
+  line-height: var(--cv-body-lh);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Trama de papel — opcional, aplicar a contextos editoriales */
+.cv-paper-grain::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(20,17,14,.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: .5;
+  mix-blend-mode: multiply;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Estilos semánticos
+   ──────────────────────────────────────────────────────────── */
+
+.cv-display {
+  font-family: var(--cv-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-size: var(--cv-display-size);
+  line-height: var(--cv-display-lh);
+  letter-spacing: var(--cv-display-tracking);
+  text-wrap: balance;
+}
+
+.cv-h1 {
+  font-family: var(--cv-serif);
+  font-weight: 400;
+  font-size: var(--cv-h1-size);
+  line-height: var(--cv-h1-lh);
+  letter-spacing: var(--cv-h1-tracking);
+  text-wrap: balance;
+}
+.cv-h1 em,
+.cv-h2 em,
+.cv-h3 em,
+.cv-display em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 100;
+  color: var(--cv-carmesi);
+}
+
+.cv-h2 {
+  font-family: var(--cv-serif);
+  font-weight: 400;
+  font-size: var(--cv-h2-size);
+  line-height: var(--cv-h2-lh);
+  letter-spacing: var(--cv-h2-tracking);
+  text-wrap: balance;
+}
+
+.cv-h3 {
+  font-family: var(--cv-serif);
+  font-weight: 400;
+  font-size: var(--cv-h3-size);
+  line-height: var(--cv-h3-lh);
+  letter-spacing: var(--cv-h3-tracking);
+}
+
+.cv-eyebrow {
+  font-family: var(--cv-mono);
+  font-weight: 500;
+  font-size: var(--cv-eyebrow-size);
+  letter-spacing: var(--cv-eyebrow-tracking);
+  text-transform: uppercase;
+  color: var(--cv-mute);
+}
+
+.cv-meta {
+  font-family: var(--cv-mono);
+  font-weight: 400;
+  font-size: var(--cv-meta-size);
+  letter-spacing: var(--cv-meta-tracking);
+  text-transform: uppercase;
+  color: var(--cv-mute);
+}
+
+.cv-body {
+  font-family: var(--cv-sans);
+  font-size: var(--cv-body-size);
+  line-height: var(--cv-body-lh);
+  color: var(--cv-ink-2);
+  text-wrap: pretty;
+}
+
+.cv-body-s {
+  font-family: var(--cv-sans);
+  font-size: var(--cv-body-s-size);
+  line-height: var(--cv-body-s-lh);
+  color: var(--cv-ink-2);
+  text-wrap: pretty;
+}
+
+.cv-code {
+  font-family: var(--cv-mono);
+  font-size: var(--cv-code-size);
+  background: var(--cv-paper-2);
+  padding: 1px 6px;
+  border-radius: var(--cv-radius-xs);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   El logotipo · marca canónica
+   Composición: CASTILLA (mono) · regla · viva. (serif itálica SOFT 100) · punto
+   ──────────────────────────────────────────────────────────── */
+
+.cv-mark {
+  display: inline-block;
+  text-align: left;
+  color: var(--cv-ink);
+}
+.cv-mark .castilla {
+  font-family: var(--cv-mono);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid currentColor;
+}
+.cv-mark .viva {
+  font-family: var(--cv-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  font-size: 88px;
+  line-height: .85;
+  letter-spacing: -0.05em;
+  text-transform: lowercase;
+  display: block;
+}
+.cv-mark .dot { color: var(--cv-carmesi); }
+
+/* Variant: invertido (oscuro) — viva entera en oro, punto en papel */
+.cv-mark--invertido { color: var(--cv-paper); }
+.cv-mark--invertido .viva { color: var(--cv-oro); }
+.cv-mark--invertido .dot { color: var(--cv-paper); }
+
+/* Variant: submarcas — viva en color regional, punto en tinta */
+.cv-mark--merindades  .viva { color: var(--cv-merindades); }
+.cv-mark--comunidades .viva { color: var(--cv-comunidades); }
+.cv-mark--ordenes     .viva { color: var(--cv-ordenes); }
+.cv-mark--merindades  .dot,
+.cv-mark--comunidades .dot,
+.cv-mark--ordenes     .dot { color: var(--cv-ink); }
+
+/* Sizes */
+.cv-mark--xs .castilla { font-size: 7.5px; letter-spacing: .38em; margin-bottom: 5px; padding-bottom: 5px; }
+.cv-mark--xs .viva     { font-size: 36px; }
+.cv-mark--sm .castilla { font-size: 10px;  margin-bottom: 8px;  padding-bottom: 8px;  }
+.cv-mark--sm .viva     { font-size: 56px; }
+.cv-mark--md .castilla { font-size: 13px;  margin-bottom: 12px; padding-bottom: 12px; }
+.cv-mark--md .viva     { font-size: 88px; }
+.cv-mark--lg .castilla { font-size: 18px;  margin-bottom: 18px; padding-bottom: 18px; }
+.cv-mark--lg .viva     { font-size: 132px; }

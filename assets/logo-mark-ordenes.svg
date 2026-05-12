@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  
+  <text x="20" y="38" class="castilla">CASTILLA</text>
+  <line x1="20" y1="58" x2="380" y2="58" class="rule"></line>
+  <text x="14" y="200" class="viva">viva<tspan class="dot">.</tspan></text>
+  <text x="22" y="226" class="region">submarca · órdenes</text>
+</svg>

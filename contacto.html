@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Castilla Viva · Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="assets/avatar-v.svg">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="_shared/site.css">
+  <script src="_shared/header.js" defer></script>
+  <script src="_shared/footer.js" defer></script>
+  <style>
+    main { padding-top: 0; }
+    .page-hero {
+      padding: clamp(160px, 18vw, 240px) 40px clamp(72px, 9vw, 120px);
+      background: var(--cv-paper);
+      border-top: 0;
+    }
+    @media (max-width: 720px) { .page-hero { padding: 140px 24px 64px; } }
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 56px;
+    }
+    @media (max-width: 880px) { .page-hero-inner { grid-template-columns: 1fr; gap: 24px; } }
+    .page-hero .num {
+      font-family: var(--cv-mono);
+      font-size: 10.5px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--cv-mute);
+    }
+    .page-hero .num strong { color: var(--cv-ink); font-weight: 500; }
+    .page-hero h1 {
+      font-family: var(--cv-serif);
+      font-weight: 400;
+      font-size: clamp(56px, 8vw, 120px);
+      line-height: .95;
+      letter-spacing: -0.03em;
+      margin: 0 0 24px;
+      text-wrap: balance;
+      max-width: 1080px;
+    }
+    .page-hero h1 em {
+      font-style: italic;
+      font-variation-settings: "SOFT" 100, "opsz" 144;
+      color: var(--cv-carmesi);
+    }
+    .page-hero .deck {
+      font-family: var(--cv-sans);
+      font-size: clamp(17px, 1.3vw, 21px);
+      line-height: 1.55;
+      color: var(--cv-ink-2);
+      max-width: 660px;
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .placeholder {
+      padding: clamp(72px, 9vw, 120px) 40px;
+      border-top: 1px solid var(--cv-rule);
+      background: var(--cv-paper-2);
+    }
+    .placeholder-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 880px) { .placeholder-inner { grid-template-columns: 1fr; gap: 32px; } }
+    .placeholder .label {
+      font-family: var(--cv-mono);
+      font-size: 10.5px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--cv-mute);
+    }
+    .placeholder .msg {
+      font-family: var(--cv-serif);
+      font-style: italic;
+      font-variation-settings: "SOFT" 100, "opsz" 144;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--cv-ink);
+      margin: 0 0 12px;
+      max-width: 740px;
+      text-wrap: balance;
+    }
+    .placeholder .note {
+      font-family: var(--cv-sans);
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--cv-ink-2);
+      margin: 0;
+      max-width: 540px;
+    }
+  </style>
+</head>
+<body>
+
+<cv-header></cv-header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="num"><strong>07</strong> · contacto</span>
+      <div>
+        <h1>Os <em>escuchamos.</em></h1>
+        <p class="deck">Para prensa, ideas, dudas o propuestas. Os contestamos sin prisa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="placeholder">
+    <div class="placeholder-inner">
+      <span class="label">próximamente</span>
+      <div>
+        <p class="msg">Esta página está en construcción.</p>
+        <p class="note">La trabajaremos en una conversación dedicada — así dejamos cada apartado bien pensado y bien escrito, sin prisa.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<cv-footer></cv-footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* ─────────────────────────────────────────────────────────────
+   Castilla Viva — estilos base compartidos en todo el sitio
+   ──────────────────────────────────────────────────────────── */
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cv-paper);
+  color: var(--cv-ink);
+  font-family: var(--cv-sans);
+  font-size: var(--cv-body-size);
+  line-height: var(--cv-body-lh);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+img, svg, video { display: block; max-width: 100%; }
+::selection { background: var(--cv-ink); color: var(--cv-paper); }
+:focus-visible { outline: 2px solid var(--cv-carmesi); outline-offset: 2px; }
+
+@keyframes cvFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
