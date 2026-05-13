@@ -10,11 +10,11 @@
 (function () {
   // ── CONFIGURACIÓN ─────────────────────────────────────────
   const NAV_ITEMS = [
-    { href: 'sobre-nosotros', label: 'Sobre nosotros' },
-    { href: 'transparencia',  label: 'Transparencia'  },
-    { href: 'eventos',        label: 'Eventos'        },
-    { href: 'mecenas',        label: 'Mecenas'        },
-    { href: 'contacto',       label: 'Contacto'       },
+    { href: '/sobre-nosotros', label: 'Sobre nosotros' },
+    { href: '/transparencia',  label: 'Transparencia'  },
+    { href: '/eventos',        label: 'Eventos'        },
+    { href: '/mecenas',        label: 'Mecenas'        },
+    { href: '/contacto',       label: 'Contacto'       },
   ];
 
   // ⚠️ REEMPLAZA con tu Payment Link real cuando lo tengas (Stripe → Payment Links)
@@ -294,7 +294,7 @@
           <nav>${navHtml}</nav>
           <div class="ctas">
             <a class="aportar" href="${STRIPE_LINK}" target="_blank" rel="noopener">Aportar</a>
-            <a class="socio" href="hazte-socio">
+            <a class="socio" href="/hazte-socio">
               Hazte socio
               <span class="bubble">→</span>
             </a>
@@ -305,7 +305,7 @@
           ${drawerHtml}
           <div class="cta-row">
             <a class="aportar" href="${STRIPE_LINK}" target="_blank" rel="noopener">Aportar</a>
-            <a class="socio" href="hazte-socio">Hazte socio →</a>
+            <a class="socio" href="/hazte-socio">Hazte socio →</a>
           </div>
         </div>
       `;
