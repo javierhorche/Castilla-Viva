@@ -10,11 +10,11 @@
 (function () {
   // ── CONFIGURACIÓN ─────────────────────────────────────────
   const NAV_ITEMS = [
-    { href: 'sobre-nosotros.html', label: 'Sobre nosotros' },
-    { href: 'transparencia.html',  label: 'Transparencia'  },
-    { href: 'eventos.html',        label: 'Eventos'        },
-    { href: 'mecenas.html',        label: 'Mecenas'        },
-    { href: 'contacto.html',       label: 'Contacto'       },
+    { href: '/sobre-nosotros', label: 'Sobre nosotros' },
+    { href: '/transparencia',  label: 'Transparencia'  },
+    { href: '/eventos',        label: 'Eventos'        },
+    { href: '/mecenas',        label: 'Mecenas'        },
+    { href: '/contacto',       label: 'Contacto'       },
   ];
 
   // ⚠️ REEMPLAZA con tu Payment Link real cuando lo tengas (Stripe → Payment Links)
@@ -264,7 +264,7 @@
 
   class CvHeader extends HTMLElement {
     connectedCallback() {
-      const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      const here = location.pathname.replace(/\.html$/, '').split('/').pop().toLowerCase() || '';
       const startsTransparent = this.hasAttribute('data-transparent-start');
       if (!startsTransparent) this.setAttribute('data-state', 'opaque');
 
@@ -282,7 +282,7 @@
       this.shadowRoot.innerHTML = `
         <style>${CSS}</style>
         <div class="bar">
-          <a class="brand" href="index.html" aria-label="Castilla viva — inicio">
+          <a class="brand" href="/" aria-label="Castilla viva — inicio">
             <div class="full">
               <span class="castilla">Castilla</span>
               <span class="viva">viva<span class="dot">.</span></span>
@@ -294,7 +294,7 @@
           <nav>${navHtml}</nav>
           <div class="ctas">
             <a class="aportar" href="${STRIPE_LINK}" target="_blank" rel="noopener">Aportar</a>
-            <a class="socio" href="hazte-socio.html">
+            <a class="socio" href="/hazte-socio">
               Hazte socio
               <span class="bubble">→</span>
             </a>
@@ -305,7 +305,7 @@
           ${drawerHtml}
           <div class="cta-row">
             <a class="aportar" href="${STRIPE_LINK}" target="_blank" rel="noopener">Aportar</a>
-            <a class="socio" href="hazte-socio.html">Hazte socio →</a>
+            <a class="socio" href="/hazte-socio">Hazte socio →</a>
           </div>
         </div>
       `;

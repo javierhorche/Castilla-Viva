@@ -16,20 +16,20 @@
   const EMAIL           = 'hola@castillaviva.org';
 
   const COL_NAVEGAR = [
-    { href: 'index.html',           label: 'Inicio'         },
-    { href: 'sobre-nosotros.html',  label: 'Sobre nosotros' },
-    { href: 'eventos.html',         label: 'Eventos'        },
-    { href: 'transparencia.html',   label: 'Transparencia'  },
+    { href: '/',                label: 'Inicio'         },
+    { href: '/sobre-nosotros',  label: 'Sobre nosotros' },
+    { href: '/eventos',         label: 'Eventos'        },
+    { href: '/transparencia',   label: 'Transparencia'  },
   ];
   const COL_HACER = [
-    { href: 'hazte-socio.html', label: 'Hazte socio'              },
-    { href: STRIPE_LINK,        label: 'Aportar',     external: true },
-    { href: 'mecenas.html',     label: 'Mecenazgo'                },
-    { href: 'mecenas.html',     label: 'Empresas'                 },
+    { href: '/hazte-socio', label: 'Hazte socio'              },
+    { href: STRIPE_LINK,    label: 'Aportar',     external: true },
+    { href: '/mecenas',     label: 'Mecenazgo'                },
+    { href: '/mecenas',     label: 'Empresas'                 },
   ];
   const COL_CONTACTO = [
     { href: `mailto:${EMAIL}`,                            label: EMAIL,    external: true },
-    { href: 'contacto.html',                              label: 'Contacto'                },
+    { href: '/contacto',                                  label: 'Contacto'                },
     { href: 'https://instagram.com/castillaviva',         label: 'Instagram', external: true },
     { href: 'https://bsky.app/profile/castillaviva.org',  label: 'Bluesky',   external: true },
   ];
