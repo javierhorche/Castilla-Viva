@@ -58,14 +58,6 @@
       position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(20,17,14,0) 30%, rgba(20,17,14,.55) 100%);
     }
-    .hero .grain {
-      position: absolute; inset: 0;
-      opacity: .14;
-      mix-blend-mode: overlay;
-      background-image: radial-gradient(rgba(240,233,220,.5) 1px, transparent 1px);
-      background-size: 3px 3px;
-      pointer-events: none;
-    }
 
     /* Etiqueta de escena (arriba derecha) */
     .scene-label {
@@ -492,14 +484,13 @@
        ──────────────────────────────────────────────────── -->
   <section class="hero" id="inicio" data-screen-label="01 Inicio">
 
-    <!-- Capas de vídeo/escena -->
-    <video class="scene active" data-scene="0" src="video/lavanda-brihuega.mp4" autoplay muted loop playsinline></video>
-    <video class="scene" data-scene="1" src="video/estepa-manchega.mp4" autoplay muted loop playsinline preload="auto"></video>
-    <video class="scene" data-scene="2" src="video/marcantabrico.mp4" autoplay muted loop playsinline preload="auto"></video>
-    <video class="scene" data-scene="3" src="video/vistaaereamadrid.mp4" style="object-position: 50% 56%;" autoplay muted loop playsinline preload="auto"></video>
+    <!-- Capas de vídeo/escena — solo la primera precarga; el resto se carga bajo demanda -->
+    <video class="scene active" data-scene="0" src="video/lavanda-brihuega.mp4" autoplay muted loop playsinline preload="auto"></video>
+    <video class="scene" data-scene="1" src="video/estepa-manchega.mp4" muted loop playsinline preload="none"></video>
+    <video class="scene" data-scene="2" src="video/marcantabrico.mp4" muted loop playsinline preload="none"></video>
+    <video class="scene" data-scene="3" src="video/vistaaereamadrid.mp4" style="object-position: 50% 56%;" muted loop playsinline preload="none"></video>
 
     <div class="overlay"></div>
-    <div class="grain"></div>
 
     <!-- Etiqueta arriba derecha -->
     <div class="scene-label" id="scene-label">
@@ -638,6 +629,9 @@
     const pips = document.querySelectorAll('.scene-label .pip');
     const labelText = document.querySelector('#scene-label .text');
     let i = 0;
+    // Precarga la siguiente escena mientras se ve la actual, en vez de
+    // descargar los 4 vídeos a la vez al entrar en la web.
+    scenes[(i + 1) % scenes.length].preload = 'auto';
     setInterval(() => {
       scenes[i].classList.remove('active');
       pips[i].classList.remove('active');
@@ -645,6 +639,8 @@
       scenes[i].classList.add('active');
       pips[i].classList.add('active');
       labelText.textContent = SCENES[i];
+      scenes[i].play();
+      scenes[(i + 1) % scenes.length].preload = 'auto';
     }, 4800);
   })();
 
